@@ -1,4 +1,5 @@
 import vk, random, time
+from getacc import config
 
 # Функция парсера файла с аккаунтами (надо дописать)
 def get_accounts(filename="accounts.txt"):
@@ -9,12 +10,10 @@ def get_accounts(filename="accounts.txt"):
     return b
 
 
+
 if __name__ == "__main__":
-    api = vk.API(
-            access_token='',
-            v='5.131',
-            proxy='' # proxy settings
-            )
+    # распаковываем словарь в позиционные параметры функции:
+    api = vk.API(**config)
     #print(api.users.get(user_ids=1))
     #print(get_accounts())
 
